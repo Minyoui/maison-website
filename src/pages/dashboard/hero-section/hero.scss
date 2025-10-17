@@ -1,0 +1,15 @@
+$defaultFontColor: #fff;
+
+.hero-section {
+    width: 100%;
+    height: 100dvh;
+    background-image: url("/public/maison-d-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

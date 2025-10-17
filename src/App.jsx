@@ -6,11 +6,13 @@ import './App.css'
 import Navbar from './components/navbar/navbar';
 
 //Pages
+import Hero from './pages/dashboard/hero-section/hero';
 
 const App = () => {
   return (
     <>
       <Navbar />
+      <Hero />
     </>
   );
 };
