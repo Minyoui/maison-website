@@ -1,16 +1,26 @@
-# React + Vite
+# Maison`D Main Website (MERN Stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## A modern standard spa website that allows customers or clients from a local spa business book an online appointment. 
 
-Currently, two official plugins are available:
+### Developer
+- Evane Dela Cruz Pacot
+### Started Development 
+- February 2025
+### Deployment Date (with valid Domain and for actualy public use)
+- N/A
+### Tech Stacks Used
+- MERN (MongoDB, Express.js, React.js, Node.js)
+### Front-End 
+- React Vite (For Fast Development)
+- HTML5
+- CSS3 and/or SCSS/Sass
+- JavaScript
+- Motion
+### Back-End
+- Node.js
+### Database
+- MongoDB
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## For more information of this project kindly reach out to the following details:
+- evanepacot2002@gmail.com
+- https://pct-portfolio.vercel.app
