@@ -1,0 +1,88 @@
+$defaultFontColor: #fff;
+$darkContainerColor: rgba(36,25,47,0.7);
+
+%fontDefault {
+    color: $defaultFontColor;
+    font-size: 12px;
+    font-family: 'Nunito','sans-serif';
+    font-weight: 'normal';
+}
+
+.navbar-wrapper {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-container {
+    width: 50%;
+    padding: 8px;
+    margin-top: 1em;
+    min-width: fit-content;
+    border-radius: 100px;
+    background-color: $darkContainerColor;
+    transition: all 0.5s ease;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-left: 10px;
+    gap: 15px;
+}
+
+.navbar-links button,
+.navbar-links a {
+    @extend %fontDefault;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar-links a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.underline {
+    width: 0%;
+    height: 1px;
+    background-color: $defaultFontColor;
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover .underline {
+    width: 100%;
+}
+
+.navbar-links img {
+    width: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-links button:hover img {
+    transform: rotate(45deg);
+}
+
+.navbar-links button:hover {
+    background-color: #4A2574;
+}
+
+#navbar-home-btn {
+    width: 100px !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+    .navbar-container{
+        width: 100%;
+        margin-top: 0px;
+        border-radius: 10px;
+    }
+}
