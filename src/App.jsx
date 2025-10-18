@@ -10,6 +10,8 @@ import Hero from './pages/dashboard/hero-section/hero';
 const SubHero = React.lazy(() => import ('./pages/dashboard/hero-section/sub-hero'))
 const About = React.lazy(() => import ('./pages/dashboard/about-section/about'))
 const Services = React.lazy(() => import ('./pages/dashboard/services-section/services'))
+const Gallery = React.lazy(() => import ('./pages/dashboard/gallery-section/gallery'))
+const Review = React.lazy(() => import ('./pages/dashboard/review-section/review'))
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
       <SubHero />
       <About />
       <Services />
+      <Gallery />
+      <Review />
     </>
   );
 };
