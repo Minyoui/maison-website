@@ -1,8 +1,9 @@
 $defaultButtonColor: #B08CCE;
+$darkHighlightColor: #4A2574;
 $defaultFontColor: #fff;
 
 .buttonOne {
-    background-color: $defaultButtonColor;
+    background: $defaultButtonColor;
     border: none;
     gap: 5px;
     padding: 15px;
@@ -11,4 +12,10 @@ $defaultFontColor: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.buttonOne:hover {
+    background: $darkHighlightColor;
 }

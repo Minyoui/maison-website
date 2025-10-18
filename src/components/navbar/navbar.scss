@@ -1,4 +1,5 @@
 $defaultFontColor: #fff;
+$darkHighlightColor: #4A2574;
 $darkContainerColor: rgba(36,25,47,0.7);
 
 %fontDefault {
@@ -19,7 +20,7 @@ $darkContainerColor: rgba(36,25,47,0.7);
 
 .navbar-container {
     width: 50%;
-    padding: 8px;
+    padding: 5px;
     margin-top: 1em;
     min-width: fit-content;
     border-radius: 100px;
@@ -40,7 +41,6 @@ $darkContainerColor: rgba(36,25,47,0.7);
 .navbar-links button,
 .navbar-links a {
     @extend %fontDefault;
-    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
@@ -71,9 +71,6 @@ $darkContainerColor: rgba(36,25,47,0.7);
     transform: rotate(45deg);
 }
 
-.navbar-links button:hover {
-    background-color: #4A2574;
-}
 
 #navbar-home-btn {
     width: 100px !important;
