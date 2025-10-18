@@ -1,0 +1,82 @@
+$defaultFontColor: #fff;
+$captionColor: #9E72C3;
+$headerColor: #4A2574;
+
+%defaultFontStyle {
+    font-family: 'Nunito','sans-serif';
+    font-weight: normal;
+    font-size: 12px;
+    color: $defaultFontColor;
+
+}
+
+.about-section {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    padding: 150px 20px;
+}
+
+.about-header {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 20px;
+
+    p {
+        color: $captionColor;
+        @extend %defaultFontStyle;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-family: 'Antic Didone','sans-serif';
+        font-weight: 300;
+        color: $captionColor;
+        font-size: 64px;
+        text-align: left;
+        padding-bottom: 20px;
+        border-bottom: solid 1px $captionColor;
+        letter-spacing: -3px;
+    }
+}
+
+.abt-image img {
+    border: 8px solid $defaultFontColor;
+    filter: grayscale(50%);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    width: 500px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.abt-image img:hover {
+    filter: grayscale(0%);
+    transform: rotate(-8deg);
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0 15px 10px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 1000px) {
+    .about-header h1 {
+        font-size: 48px;
+    }
+
+    .abt-image img {
+        width: 400px;
+    }
+}
+
+@media (max-width: 800px) {
+    .about-section {
+        flex-direction: column;
+    }
+}

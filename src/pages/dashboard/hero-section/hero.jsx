@@ -8,7 +8,7 @@ import Button from '../../../components/button/buttonOne';
 
 const Hero = () => {
     return (
-        <div className='hero-section'>
+        <div className='hero-section' id="home">
             <img src={MDLogo} alt="Maison`D Business Logo" loading='lazy'/>
             <Button>Book Now</Button>
         </div>

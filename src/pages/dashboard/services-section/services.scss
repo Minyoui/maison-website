@@ -1,0 +1,305 @@
+/* Spa Menu CSS Styles */
+
+/* Main Container */
+.spa-menu {
+  font-family: 'Nunito', sans-serif;
+  background-color: #D3C0E6;
+  min-height: 100vh;
+  padding: 40px 20px;
+
+}
+
+/* Header Section */
+.spa-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.spa-title {
+  font-size: 4rem;
+  font-family: 'Antic Didone','sans-serif';
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 300;
+  letter-spacing: -3px;
+}
+
+.spa-title-divider {
+  width: 80px;
+  height: 2px;
+  background-color: #B08CCE;
+  margin: 0 auto 20px;
+}
+
+.spa-subtitle {
+  font-size: 0.9rem;
+  color: #777;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main Content Container */
+.spa-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Category Navigation */
+.category-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.category-button {
+  padding: 12px 30px;
+  border: none;
+  background-color:#fff;
+  color: #B08CCE;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: none;
+
+  display: flex;
+  align-items: center;
+}
+
+.category-button.active {
+    background-color: #B08CCE;
+    transform: translateY(-5px);
+    color: white;
+    box-shadow: 0 4px 15px rgba(74, 37, 116, 0.3);
+}
+
+.category-button:hover {
+    background-color: #4A2574;
+  color: white;
+}
+
+.category-icon {
+  margin-right: 8px;
+}
+
+.category-icon img {
+    width: 25px;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Service Card */
+.service-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Service Card Header */
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.service-name {
+  font-size: 1.4rem;
+  color: #5a5a5a;
+  margin: 0;
+  font-weight: 400;
+}
+
+.service-price {
+  font-size: 1.3rem;
+  color: #9E72C3;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-left: 15px;
+}
+
+/* Service Duration */
+.service-duration {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.duration-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #9E72C3;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Service Description */
+.service-description {
+  color: #667;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+/* Service Package (SPECIFIC FOR PACKAGES)*/
+.service-package {
+    color: #667;
+}
+
+.package-price {
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.package-price ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.package-price ul li {
+    font-family: 'Nunito','sans-serif';
+    color: #6251A2;
+    font-weight: 700;
+}
+
+.package-price img {
+    width: 25px;
+}
+
+.service-package span {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Service Card Footer */
+.service-footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.book-now-button {
+  background-color: #B08CCE;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.book-now-button:hover {
+  background-color: #4A2574;
+}
+
+/* Footer Section */
+.spa-footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.footer-quote {
+  color: #666;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  font-style: italic;
+}
+
+.footer-note {
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .spa-title {
+    font-size: 2.2rem;
+  }
+  
+  .category-navigation {
+    gap: 15px;
+  }
+  
+  .category-button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 20px;
+  }
+  
+  .service-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .service-price {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .spa-menu {
+    padding: 20px 15px;
+  }
+  
+  .spa-title {
+    font-size: 1.8rem;
+  }
+  
+  .spa-subtitle {
+    font-size: 1rem;
+  }
+  
+  .category-navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .category-button {
+    width: 100%;
+    max-width: 250px;
+  }
+}

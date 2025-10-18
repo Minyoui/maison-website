@@ -28,12 +28,21 @@ $darkContainerColor: rgba(36,25,47,0.7);
     transition: all 0.5s ease;
 }
 
+.navigation-links,
 .navbar-links {
-    list-style: none;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+.navigation-links {
+    width: 50%;
+    gap: 20px;
+}
+.navbar-links {
     padding-left: 10px;
     gap: 15px;
 }
@@ -74,6 +83,21 @@ $darkContainerColor: rgba(36,25,47,0.7);
 
 #navbar-home-btn {
     width: 100px !important;
+}
+
+/* SCROLLED NAVBAR */
+.navbar-wrapper.scrolled {
+    z-index: 9999;
+    padding: 0px;
+    .navbar-container{
+        backdrop-filter: blur(5px);
+        border-radius: 0px;
+        margin-top: 0;
+        width: 100%;
+    }
+    .navigation-links {
+        width: 35%;
+    }
 }
 
 /* MOBILE */
