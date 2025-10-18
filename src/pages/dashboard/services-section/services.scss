@@ -9,36 +9,6 @@
 
 }
 
-/* Header Section */
-.spa-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.spa-title {
-  font-size: 4rem;
-  font-family: 'Antic Didone','sans-serif';
-  color: white;
-  margin-bottom: 10px;
-  font-weight: 300;
-  letter-spacing: -3px;
-}
-
-.spa-title-divider {
-  width: 80px;
-  height: 2px;
-  background-color: #B08CCE;
-  margin: 0 auto 20px;
-}
-
-.spa-subtitle {
-  font-size: 0.9rem;
-  color: #777;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
 /* Main Content Container */
 .spa-content {
   max-width: 1200px;
@@ -246,10 +216,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .spa-title {
-    font-size: 2.2rem;
-  }
-  
   .category-navigation {
     gap: 15px;
   }
@@ -281,23 +247,6 @@
 }
 
 @media (max-width: 480px) {
-  .spa-menu {
-    padding: 20px 15px;
-  }
-  
-  .spa-title {
-    font-size: 1.8rem;
-  }
-  
-  .spa-subtitle {
-    font-size: 1rem;
-  }
-  
-  .category-navigation {
-    flex-direction: column;
-    align-items: center;
-  }
-  
   .category-button {
     width: 100%;
     max-width: 250px;

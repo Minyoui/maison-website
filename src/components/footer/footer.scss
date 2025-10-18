@@ -1,0 +1,60 @@
+$defaultFontColor: #fff;
+$footerContentContainer: #3B2B49;
+$footerLicenseContainerColorOne: #9E72C3;
+$footerLicenseContainerColorTwo: #4B365D;
+
+
+%defaultFontStyle {
+    color: $defaultFontColor;
+    font-family: 'Nunito','sans-serif';
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.footer-container {
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top-left-radius: 200px;
+    padding: 20px 10px;
+
+    background-color: $footerContentContainer;
+}
+
+.footer-category {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p {
+        @extend %defaultFontStyle;
+        color: #9E72C3;
+        font-weight: bold;
+    }
+
+    a {
+        @extend %defaultFontStyle;
+    }
+}
+
+.footer-license {
+    @extend %defaultFontStyle;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(
+        $footerLicenseContainerColorOne,
+        $footerLicenseContainerColorTwo
+    );
+    padding: 15px;
+    a {
+        @extend %defaultFontStyle;
+    }
+}

@@ -2,6 +2,9 @@ import './services.scss';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
+//Components
+import Header from '../../../components/header/header';
+
 //Assets
 import Solo from '../../../assets/icons/Solo.svg';
 import Couple from '../../../assets/icons/Couple.svg';
@@ -152,13 +155,10 @@ const Services = () => {
     return (
         <div className="spa-menu">
         {/* Header */}
-        <div className="spa-header">
-            <h1 className="spa-title">Services We Offer</h1>
-            <div className="spa-title-divider"></div>
-            <p className="spa-subtitle">
-            Discover tranquility and rejuvenation with our carefully curated spa services
-            </p>
-        </div>
+        <Header 
+            title="Services We Offer"
+            subtitle="Discover tranquility and rejuvenation with our carefully curated spa services"
+        />
 
         <div className="spa-content">
             {/* Category Navigation */}

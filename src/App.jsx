@@ -4,6 +4,7 @@ import './App.css'
 
 //Components
 import Navbar from './components/navbar/navbar';
+const Footer = React.lazy(() => import ('./components/footer/footer'))
 
 //Pages
 import Hero from './pages/dashboard/hero-section/hero';
@@ -12,6 +13,7 @@ const About = React.lazy(() => import ('./pages/dashboard/about-section/about'))
 const Services = React.lazy(() => import ('./pages/dashboard/services-section/services'))
 const Gallery = React.lazy(() => import ('./pages/dashboard/gallery-section/gallery'))
 const Review = React.lazy(() => import ('./pages/dashboard/review-section/review'))
+const Contact = React.lazy(() => import ('./pages/dashboard/contact-section/contact'))
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
       <Services />
       <Gallery />
       <Review />
+      <Contact />
+      <Footer />
     </>
   );
 };
