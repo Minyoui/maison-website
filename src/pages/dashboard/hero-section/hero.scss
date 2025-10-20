@@ -35,3 +35,8 @@ $defaultFontColor: #fff;
     letter-spacing: 2px;
 }
 
+@media (max-width: 500px) {
+    .hero-section img {
+        width: 80%;
+    }
+}

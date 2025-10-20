@@ -13,7 +13,7 @@ const SubFooter = () => {
             <motion.button 
                 type="button"
                 whileHover={{scale: 1.05, boxShadow: "0 10px 10px rgba(0,0,0,0.3)"}}
-                whileTap={{scale: 0.95}}
+                whileTap={{scale: 0.95, boxShadow: "0 3px 3px rgba(0,0,0,0.3)"}}
             >
                 Book Now
             </motion.button>

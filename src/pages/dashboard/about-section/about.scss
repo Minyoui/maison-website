@@ -79,4 +79,13 @@ $headerColor: #4A2574;
     .about-section {
         flex-direction: column;
     }
+    .about-header {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .abt-image img {
+        width: 100%;
+    }
 }

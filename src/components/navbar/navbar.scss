@@ -20,11 +20,13 @@ $darkContainerColor: rgba(36,25,47,0.7);
 
 .navbar-container {
     width: 50%;
+    height: fit-content;
     padding: 5px;
     margin-top: 1em;
     min-width: fit-content;
     border-radius: 100px;
     background-color: $darkContainerColor;
+    overflow: hidden;
     transition: all 0.5s ease;
 }
 
@@ -45,6 +47,7 @@ $darkContainerColor: rgba(36,25,47,0.7);
 .navbar-links {
     padding-left: 10px;
     gap: 15px;
+    
 }
 
 .navbar-links button,
@@ -85,6 +88,11 @@ $darkContainerColor: rgba(36,25,47,0.7);
     width: 100px !important;
 }
 
+.navbar-dashboard,
+#menu-icon {
+    display: none;
+}
+
 /* SCROLLED NAVBAR */
 .navbar-wrapper.scrolled {
     z-index: 9999;
@@ -107,5 +115,84 @@ $darkContainerColor: rgba(36,25,47,0.7);
         width: 100%;
         margin-top: 0px;
         border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        .navbar-dashboard {
+            display: none;
+        }
+    }
+
+    .navbar-links {
+        button {
+            border-radius: 5px;
+        }
+    }
+
+    #register,
+    .navigation-links {
+        display: none;
+    }
+
+    #menu-icon {
+        display: flex;
+    }
+
+    .navbar-container.opened {
+        height: fit-content;
+        padding: 0px;
+        gap: 10px;
+        .navbar-dashboard {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .account-info,
+            li,
+            ul {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                list-style: none;
+
+                a {
+                    color: $defaultFontColor;
+                    font-family: 'Nunito','sans-serif';
+                    padding: 20px 0px;
+                    padding-left: 20px;
+                    text-align: left;
+                    width: 100%;
+                    transition: all 0.3s ease;
+
+                    &:hover{
+                        background-color: rgba(255,255,255,0.5);
+                    }
+                }
+            }
+            .account-info {
+                padding: 20px;
+                img {
+                    width: 25px;
+                    transition: all 0.3s ease;
+                }
+
+                button {
+                    color: $defaultFontColor;
+                    font-family: 'Nunito','sans-serif';
+                    &:hover img {
+                        transform: rotate(45deg);
+                    }
+                }             
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar-container.opened {
+        .navbar-dashboard {
+            flex-direction: column-reverse;
+        }
     }
 }
