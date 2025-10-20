@@ -153,7 +153,7 @@ const Services = () => {
     ];
 
     return (
-        <div className="spa-menu">
+        <div className="spa-menu" id="services">
         {/* Header */}
         <Header 
             title="Services We Offer"

@@ -40,7 +40,7 @@ const Review = () => {
     const activeReview = reviewsData.find(review => review.id === activeReviewId);
 
     return (
-        <div className="reviews-section">
+        <div className="reviews-section" id="reviews">
             {/* Header */}
             <Header 
                 title="What Our Client's Say"

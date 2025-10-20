@@ -29,7 +29,7 @@ const Gallery = () => {
         }, []);
 
     return (
-        <div ref={sectionRef} className={`gallery-section ${inView? 'animate' : ''}`}>
+        <div ref={sectionRef} className={`gallery-section ${inView? 'animate' : ''}`} id="gallery">
                 <div ref={sectionRef} className={`gallery-header ${inView? 'animate' : ''}`}>
                     <h1>
                         Experience Serenity

@@ -2,6 +2,9 @@ import './footer.scss';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 
+//Components 
+import Button from '../button/buttonOne';
+
 //Assets
 import Logo from '/MD-footer-logo.svg';
 import Facebook from '../../assets/icons/Facebook.svg';
@@ -80,7 +83,7 @@ const Footer = () => {
     return (
         <div className='footer-container'>
             <div className='footer-content'>
-                <img src={Logo} alt="Maison`D Spa Logo" loading='lazy'/>
+                <img src={Logo} alt="Maison`D Spa Logo" className="footer-logo" loading='lazy'/>
                 {Object.entries(category).map(([categories, lists]) => (
                     <ul key={categories} className='footer-category'>
                         <p>{categories}</p>
@@ -95,7 +98,11 @@ const Footer = () => {
                 ))}
                 <div className='newsletter-social'>
                     <form className='newsletter'>
-
+                        <label for="email">Subscribe to our Newsletter!</label>
+                        <div className='newsletter-form-box'>
+                            <input name="email" type="email" id="newsletter-email" placeholder="Enter your email" required/>
+                            <Button>Submit</Button>
+                        </div>
                     </form>
                     <div className='socials'>
                         <p>Follow us on our Socials!</p>
