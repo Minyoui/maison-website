@@ -75,9 +75,9 @@ const Footer = () => {
     };
 
     const socials = [
-        {social:'Facebook', link:'', icon:Facebook, label:'Facebook'},
-        {social:'Instagram', link:'', icon:Instagram, label:'Instagram'},
-        {social:'TikTok', link:'', icon:Tiktok, label:'TikTok'}
+        {social:'Facebook', link:'https://www.facebook.com/profile.php?id=100092370982090', icon:Facebook, label:'Facebook'},
+        {social:'Instagram', link:'https://www.instagram.com/blissfulbalispa_kawit/', icon:Instagram, label:'Instagram'},
+        {social:'TikTok', link:'https://www.tiktok.com/@blissfulbalikawit', icon:Tiktok, label:'TikTok'}
     ];
 
     return (
