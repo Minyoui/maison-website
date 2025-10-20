@@ -14,13 +14,13 @@ const SubHero = () => {
                 <img src={Leaves} aria-hidden="true" loading="lazy" className='leaves'/>
                 <div className='sh-header'>
                     <h1>
-                        The Most <strong><TextType 
+                        The Most <TextType 
                                     text={["Trusted ❤️", "Relaxing 😌", "Affordable 🤑"]}
                                     typingSpeed={75}
                                     pauseDuration={1500}
                                     showCursor={true}
-                                    cursorCharacter="|"
-                                /></strong>
+                                    cursorCharacter=""
+                                />
                         Spa in Kawit, Cavite
                     </h1>
                 </div>

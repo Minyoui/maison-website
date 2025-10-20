@@ -1,0 +1,42 @@
+$borderColor: rgba(255,255,255);
+$colorOne: #9E72C3;
+$colorTwo: #E87DC8;
+$colorThree: #d6a9f3;
+$nunitoFont: 'Nunito','sans-serif';
+
+.sub-footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 0px;
+
+    button {
+        color: #fff;
+        font-size: 24px;
+        font-family: 'Pacifico','sans-serif';
+        border: 5px solid $borderColor;
+        border-radius: 100px;
+        padding: 8px 40px;
+        background: linear-gradient(
+            $colorOne,
+            $colorTwo
+        );
+        cursor: pointer;
+    }
+}
+
+.wellness-header {
+        width: 600px;
+}
+
+.woman-in-spa {
+    position: absolute;
+    top: -125px;
+    width: 250px;
+}
+
+/* RESPONSIVE DESIGN */
+

@@ -5,6 +5,7 @@ import './App.css'
 //Components
 import Navbar from './components/navbar/navbar';
 const Footer = React.lazy(() => import ('./components/footer/footer'))
+const SubFooter = React.lazy(() => import ('./components/footer/sub-footer'))
 
 //Pages
 import Hero from './pages/dashboard/hero-section/hero';
@@ -27,6 +28,7 @@ const App = () => {
       <Gallery />
       <Review />
       <Contact />
+      <SubFooter />
       <Footer />
     </>
   );
