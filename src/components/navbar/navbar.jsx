@@ -38,10 +38,12 @@ const Navbar = () => {
                         <li><a href="#contact">CONTACT US<div className='underline'/></a></li>
                     </div>
                     <li id="register">
-                        <Button>
-                            Sign-up / Sign-in 
-                            <img src={Arrow} aria-hidden="true" loading='lazy'/>
-                        </Button>
+                        <Link to="/Login">
+                            <Button>
+                                Sign-up / Sign-in 
+                                <img src={Arrow} aria-hidden="true" loading='lazy'/>
+                            </Button>
+                        </Link>
                     </li>
 
                     <Menu onToggle={setMenuOpen}/>
@@ -56,10 +58,12 @@ const Navbar = () => {
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                     <div className='account-info'>
-                        <Button>
-                            Sign-up / Sign In
-                            <img src={Arrow} aria-hidden="true" loading='lazy'/>
-                        </Button>
+                        <Link to="/Login">
+                            <Button>
+                                Sign-up / Sign In
+                                <img src={Arrow} aria-hidden="true" loading='lazy'/>
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </nav>

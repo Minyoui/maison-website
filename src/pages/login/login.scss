@@ -1,0 +1,183 @@
+$defaultFontColorOne: #fff;
+$defaultFontColorTwo: #333333;
+$NunitoFont: 'Nunito','sans-serif';
+
+%defaultFontStyle {
+    font-family: $NunitoFont;
+    font-weight: normal;
+}
+
+.login-wrapper {
+    background-color: $defaultFontColorOne;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.login-background {
+    background-image: url("/public/maison-d-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    img {
+        width: clamp(300px, 100%, 500px);
+    }
+}
+
+.login-container {
+    width: 100%;
+    @extend %defaultFontStyle;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+    gap: 40px;
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .login-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        a button, button {
+            border-radius: 10px;
+            @extend %defaultFontStyle;
+            color: $defaultFontColorOne;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input {
+            background-color: #e9e9e9;
+            padding: 20px;
+            border-radius: 10px;
+            border:none;
+
+            &::placeholder {
+                @extend %defaultFontStyle;
+            }
+        }
+    }
+}
+
+.login-options,
+.login-divider {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    p {
+        font-family: inherit;
+        color: #d8d8d8;
+        text-align: center;
+        width: 100%;
+    }
+    div {
+        background-color: #d8d8d8;
+        height: 2px;
+        width: 100%;
+        border-radius: 100px;
+    }
+}
+
+.login-options {
+    button {
+            background-color: #e9e9e9;
+            cursor: pointer;
+            border-radius: 10px;
+            border:none;
+            width: 100%;
+            padding: 20px;
+            transition: all 0.3s ease;
+        img {
+            width: 70px;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    }
+}
+
+.login-policy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    @extend %defaultFontStyle;
+
+    button {
+        padding: 10px 30px;
+        background-color: #e9e9e9;
+        cursor: pointer;
+        border-radius: 10px;
+        border:none;
+        @extend %defaultFontStyle;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            color: $defaultFontColorOne;
+            background-color: #4A2574;
+        }
+    }
+}
+
+.privacy-policy,
+.terms-and-conditions {
+    z-index: 999;
+    top: 200px;
+    position: absolute;
+    background-color: rgba(255,255,255,0.8);
+    backdrop-filter: blur(5px);
+    display: none;
+    border-radius: 10px;
+    @extend %defaultFontStyle;
+
+    h1 {
+        color: #4A2574;
+    }
+
+    &.opened {
+        height: auto;
+        padding: 20px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        @extend %defaultFontStyle;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        padding: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            color: $defaultFontColorOne;
+            background-color: rgb(235, 86, 86);
+        }
+    }
+}
+
+@media (max-width: 748px) {
+    .login-wrapper {
+        flex-direction: column;
+    }
+}
+

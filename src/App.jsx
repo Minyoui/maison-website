@@ -7,7 +7,7 @@ import Navbar from './components/navbar/navbar';
 const Footer = React.lazy(() => import ('./components/footer/footer'))
 const SubFooter = React.lazy(() => import ('./components/footer/sub-footer'))
 
-//Pages
+//Pages-Dashboard
 import Hero from './pages/dashboard/hero-section/hero';
 const SubHero = React.lazy(() => import ('./pages/dashboard/hero-section/sub-hero'))
 const About = React.lazy(() => import ('./pages/dashboard/about-section/about'))
@@ -16,21 +16,41 @@ const Gallery = React.lazy(() => import ('./pages/dashboard/gallery-section/gall
 const Review = React.lazy(() => import ('./pages/dashboard/review-section/review'))
 const Contact = React.lazy(() => import ('./pages/dashboard/contact-section/contact'))
 
+const HomePage = () => (
+  <>
+    <Navbar />
+    <Hero />
+    <Suspense fallback={<div>Loading...</div>}/>
+    <SubHero />
+    <About />
+    <Services />
+    <Gallery />
+    <Review />
+    <Contact />
+    <SubFooter />
+    <Footer />
+  </>
+);
+
+//Pages-Login
+const Login = React.lazy(() => import ('./pages/login/login'))
+
+const LoginPage = () => (
+  <Login />
+);
+
+
+//MAIN APP
+
 const App = () => {
+  const location = useLocation();
 
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Suspense fallback={<div>Loading...</div>}/>
-      <SubHero />
-      <About />
-      <Services />
-      <Gallery />
-      <Review />
-      <Contact />
-      <SubFooter />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/Login" element={<LoginPage />}/>
+      </Routes>
     </>
   );
 };
