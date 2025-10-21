@@ -34,10 +34,8 @@ const HomePage = () => (
 
 //Pages-Login
 const Login = React.lazy(() => import ('./pages/login/login'))
-
-const LoginPage = () => (
-  <Login />
-);
+//Pages-Register
+const Register = React.lazy(() => import('./pages/register/register'))
 
 
 //MAIN APP
@@ -49,7 +47,8 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/Login" element={<LoginPage />}/>
+        <Route path="/Login" element={<Login />}/>
+        <Route path="/Register" element={<Register />}/>
       </Routes>
     </>
   );

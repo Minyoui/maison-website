@@ -1,0 +1,191 @@
+$defaultFontColorOne: #fff;
+$NunitoFont: 'Nunito','sans-serif';
+
+%defaultFontStyle {
+    font-family: $NunitoFont;
+    font-weight: normal;
+}
+
+.register-wrapper {
+    background-color: $defaultFontColorOne;
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: row;
+}
+
+.register-background {
+    background-image: url("/public/maison-d-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    img {
+        width: clamp(300px, 100%, 500px);
+    }
+}
+
+.register-container {
+    width: 100%;
+    @extend %defaultFontStyle;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+    gap: 40px;
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .register-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        input {
+            background-color: #e9e9e9;
+            padding: 20px;
+            border-radius: 10px;
+            border:none;
+
+            &::placeholder {
+                @extend %defaultFontStyle;
+            }
+        }
+
+        a button, button {
+            border-radius: 10px;
+            @extend %defaultFontStyle;
+            color: $defaultFontColorOne;
+            font-size: 16px;
+            width: 100%;
+        }
+
+    }
+}
+
+.register-bday-email,
+.register-name {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+
+    .birthday,
+    .email-address,
+    .last-name,
+    .first-name {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+}
+
+.cancel-btn {
+    width: 100%;
+
+    & button {
+        margin-top: -25px;
+        @extend %defaultFontStyle;
+        color: #fff;
+        border-radius: 10px;
+        font-size: 16px;
+        width: 100%;
+    }
+}
+
+/* CHECKBOX */
+
+.custom-checkbox {
+    position: relative;
+    padding-top: 0 !important;
+    padding-left: 25px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    font-size: 16px;
+
+     input {
+        position: absolute;
+        width: 125px;
+        height: 20px;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    button {
+        width: fit-content !important;
+        border: none;
+        border-radius: 10px !important;
+        padding: 10px;
+        font-size: 14px !important;
+        color: black !important;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #4A2574;
+            color: #fff !important;
+        }
+    }
+}
+
+
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #DEDEDE;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-checkbox input:checked + .checkmark {
+    border-color: #7850a2;
+    background-color: #8851c2;
+}
+
+/* Add checkmark */
+.custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Show checkmark when checked */
+.custom-checkbox input:checked + .checkmark::after {
+  display: block;
+}
+
+@media (max-width: 748px) {
+    .register-wrapper {
+        flex-direction: column;
+    }
+}
+@media (max-width: 540px) {
+    .register-bday-email,
+    .register-name {
+        flex-direction: column;
+    }
+}
