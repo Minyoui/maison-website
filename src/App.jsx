@@ -17,6 +17,7 @@ const Review = React.lazy(() => import ('./pages/dashboard/review-section/review
 const Contact = React.lazy(() => import ('./pages/dashboard/contact-section/contact'))
 
 const App = () => {
+
   return (
     <>
       <Navbar />

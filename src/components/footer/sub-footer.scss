@@ -11,7 +11,7 @@ $nunitoFont: 'Nunito','sans-serif';
     align-items: center;
     justify-content: center;
 
-    padding: 80px 0px;
+    padding: 80px 20px;
 
     button {
         color: #fff;
@@ -40,3 +40,12 @@ $nunitoFont: 'Nunito','sans-serif';
 
 /* RESPONSIVE DESIGN */
 
+@media (max-width: 748px) {
+    .wellness-header {
+        width: 100%;
+    }
+
+    .woman-in-spa {
+        width: 225px;
+    }
+}

@@ -84,33 +84,35 @@ const Footer = () => {
         <div className='footer-container'>
             <div className='footer-content'>
                 <img src={Logo} alt="Maison`D Spa Logo" className="footer-logo" loading='lazy'/>
-                {Object.entries(category).map(([categories, lists]) => (
-                    <ul key={categories} className='footer-category'>
-                        <p>{categories}</p>
-                        {lists.map((list, index) => (
-                            <li key={index}>
-                                <a href={list.link} target={list.target}>
-                                    {list.topic}
+                <div className='footer-nav'>
+                    {Object.entries(category).map(([categories, lists]) => (
+                        <ul key={categories} className='footer-category'>
+                            <p>{categories}</p>
+                            {lists.map((list, index) => (
+                                <li key={index}>
+                                    <a href={list.link} target={list.target}>
+                                        {list.topic}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    ))}
+                    <div className='newsletter-social'>
+                        <form className='newsletter'>
+                            <label for="email">Subscribe to our Newsletter!</label>
+                            <div className='newsletter-form-box'>
+                                <input name="email" type="email" id="newsletter-email" placeholder="Enter your email" required/>
+                                <Button>Submit</Button>
+                            </div>
+                        </form>
+                        <div className='socials'>
+                            <p>Follow us on our Socials!</p>
+                            {socials.map (item => (
+                                <a key={item.social} href={item.link} target="_blank">
+                                    <img src={item.icon} alt={item.label} loading='lazy'/>
                                 </a>
-                            </li>
-                        ))}
-                    </ul>
-                ))}
-                <div className='newsletter-social'>
-                    <form className='newsletter'>
-                        <label for="email">Subscribe to our Newsletter!</label>
-                        <div className='newsletter-form-box'>
-                            <input name="email" type="email" id="newsletter-email" placeholder="Enter your email" required/>
-                            <Button>Submit</Button>
+                            ))}
                         </div>
-                    </form>
-                    <div className='socials'>
-                        <p>Follow us on our Socials!</p>
-                        {socials.map (item => (
-                            <a key={item.social} href={item.link} target="_blank">
-                                <img src={item.icon} alt={item.label} loading='lazy'/>
-                            </a>
-                        ))}
                     </div>
                 </div>
             </div>
