@@ -16,7 +16,7 @@ const Register = () => {
     return (
         <div className='register-wrapper'>
             <div className='register-background'>
-                <img src={MDLogo} alt="Maison`D Spa Logo" loading='lazy' />
+                <img src={MDLogo} alt="Maison`D Spa Logo" fetchPriority='high'/>
                 {/* MODAL */}
 
                 {/* TERMS & CONDITIONS */}

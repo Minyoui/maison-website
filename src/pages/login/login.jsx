@@ -18,7 +18,7 @@ const Login = () => {
     return (
         <div className='login-wrapper'>
             <div className='login-background'>
-                <img src={MDLogo} alt="Maison`D Spa Logo" loading='lazy' />
+                <img src={MDLogo} alt="Maison`D Spa Logo" fetchPriority='high'/>
                 {/* MODAL */}
 
                 {/* TERMS & CONDITIONS */}

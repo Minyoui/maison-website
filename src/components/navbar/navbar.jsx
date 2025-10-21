@@ -27,7 +27,7 @@ const Navbar = () => {
 
     return (
         <div className={`navbar-wrapper ${scrolled? 'scrolled':''}`}>
-            <nav className={`navbar-container ${isMenuOpen? 'opened':''}`}>
+            <nav role="navigation" className={`navbar-container ${isMenuOpen? 'opened':''}`}>
                 <ul className='navbar-links'>              
                     <li><a href="/"><img src={TextLogo} alt="Maison`D Home Button" id="navbar-home-btn"/></a></li>
                     

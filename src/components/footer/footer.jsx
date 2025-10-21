@@ -81,7 +81,7 @@ const Footer = () => {
     ];
 
     return (
-        <div className='footer-container'>
+        <footer className='footer-container' role='contentinfo'>
             <div className='footer-content'>
                 <img src={Logo} alt="Maison`D Spa Logo" className="footer-logo" loading='lazy'/>
                 <div className='footer-nav'>
@@ -117,7 +117,7 @@ const Footer = () => {
                 </div>
             </div>
             <p className='footer-license'>Copyright © Maison`D 2025. All rights reserved. Icons by <a href="https://icons8.com/" target="_blank"><strong>Icons8</strong></a></p>
-        </div>
+        </footer>
     );
 };
 

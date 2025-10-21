@@ -8,10 +8,10 @@ import Button from '../../../components/button/buttonOne';
 
 const Hero = () => {
     return (
-        <div className='hero-section' id="home">
-            <img src={MDLogo} alt="Maison`D Business Logo" loading='lazy'/>
+        <header className='hero-section' id="home" role='banner'>
+            <img src={MDLogo} alt="Maison`D Business Logo" fetchPriority='high'/>
             <Button>Book Now</Button>
-        </div>
+        </header>
     );
 };
 
