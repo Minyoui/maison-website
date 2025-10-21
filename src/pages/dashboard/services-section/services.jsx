@@ -153,7 +153,7 @@ const Services = () => {
     ];
 
     return (
-        <div className="spa-menu" id="services">
+        <main className="spa-menu" id="services" role='main'>
         {/* Header */}
         <Header 
             title="Services We Offer"
@@ -179,7 +179,7 @@ const Services = () => {
             {services[activeCategory].map((service, index) => (
                 <div key={index} className="service-card">
                 <div className="service-header">
-                    <h3 className="service-name">{service.name}</h3>
+                    <h1 className="service-name">{service.name}</h1>
                     <span className="service-price">
                         {service.price}
                     </span>
@@ -234,7 +234,7 @@ const Services = () => {
             </p>
             </div>
         </div>
-        </div>
+        </main>
     );
 };
 

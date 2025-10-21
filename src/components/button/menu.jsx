@@ -16,6 +16,7 @@ const Menu = ({ onToggle }) => {
             className={`menu-btn ${isclicked? 'clicked':''}`}
             onClick={handleClick}
             id="menu-icon"
+            aria-label='Menu Button'
         >
             <div className='upper-line'/>
             <div className='middle-line'/>

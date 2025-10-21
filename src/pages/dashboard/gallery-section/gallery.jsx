@@ -29,7 +29,7 @@ const Gallery = () => {
         }, []);
 
     return (
-        <div ref={sectionRef} className={`gallery-section ${inView? 'animate' : ''}`} id="gallery">
+        <main ref={sectionRef} className={`gallery-section ${inView? 'animate' : ''}`} id="gallery">
                 <div ref={sectionRef} className={`gallery-header ${inView? 'animate' : ''}`}>
                     <h1>
                         Experience Serenity
@@ -59,7 +59,7 @@ const Gallery = () => {
                     >
                         <source src={Video2} type="video/mp4"/>
                     </video>
-            </div>
+            </main>
     );
 };
 

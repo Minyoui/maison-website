@@ -40,7 +40,7 @@ const Review = () => {
     const activeReview = reviewsData.find(review => review.id === activeReviewId);
 
     return (
-        <div className="reviews-section" id="reviews">
+        <main className="reviews-section" id="reviews">
             {/* Header */}
             <Header 
                 title="What Our Client's Say"
@@ -52,7 +52,7 @@ const Review = () => {
                                         {activeReview && (
                                             <div className="reviews-content active">
                                                 <img src={activeReview.profileIcon} className="reviews-profile-icon"  aria-hidden="true" loading='lazy'></img>
-                                                <h3 className="reviews-profile-name">{activeReview.profileName}</h3>
+                                                <h1 className="reviews-profile-name">{activeReview.profileName}</h1>
                                                 <div className="reviews-rating">
                                                     <img src={Star} aria-hidden="true" loading='lazy'/>
                                                     <img src={Star} aria-hidden="true" loading='lazy'/>
@@ -79,7 +79,7 @@ const Review = () => {
                                 </div>
                             </div>
             
-        </div>
+        </main>
     );
 };
 

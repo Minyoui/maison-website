@@ -5,7 +5,7 @@ import AbtImage from '../../../assets/images/MD-about-img.jpg';
 
 const About = () => {
     return (
-        <div className='about-section'>
+        <main className='about-section'>
             <div className='about-header'>
                 <h1>
                     Experience Calm, Curated with Luxurious Care
@@ -17,7 +17,7 @@ const About = () => {
             <a className='abt-image' href="" target='_blank'>
                 <img src={AbtImage} alt="Maison`D therapist serving a client" loading='lazy'/>
             </a>
-        </div>
+        </main>
     );
 };
 

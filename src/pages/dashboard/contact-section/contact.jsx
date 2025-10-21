@@ -30,7 +30,7 @@ const Contact = () => {
     ]
 
     return (
-        <div className='contact-section' id='contact'>
+        <main className='contact-section' id='contact'>
                 <Header 
                     title="Contact Us"
                     subtitle="Escape to tranquility and discover your path to wellness. We're here to guide you on your journey to complete relaxation."
@@ -57,7 +57,7 @@ const Contact = () => {
                         title="Spa Location"
                     ></iframe>
                 </div>
-            </div>
+            </main>
     );
 };
 
