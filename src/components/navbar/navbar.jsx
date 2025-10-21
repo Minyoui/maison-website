@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className={`navbar-wrapper ${scrolled? 'scrolled':''}`}>
             <nav role="navigation" className={`navbar-container ${isMenuOpen? 'opened':''}`}>
                 <ul className='navbar-links'>              
-                    <li><a href="/"><img src={TextLogo} alt="Maison`D Home Button" id="navbar-home-btn"/></a></li>
+                    <li><Link to="/"><img src={TextLogo} alt="Maison`D Home Button" id="navbar-home-btn"/></Link></li>
                     
                     <div className='navigation-links'>
                         <li><a href="#home">HOME<div className='underline'/></a></li>

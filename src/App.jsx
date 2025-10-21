@@ -32,14 +32,26 @@ const HomePage = () => (
   </>
 );
 
+//Pages-About
+const AboutHero = React.lazy(() => import ('./pages/about/hero-section/hero'))
+const AboutPage = () => (
+  <>
+    <Navbar />
+    <AboutHero />
+    <SubFooter />
+    <Footer />
+  </>
+);
+
 //Pages-Login
 const Login = React.lazy(() => import ('./pages/login/login'))
 //Pages-Register
 const Register = React.lazy(() => import('./pages/register/register'))
 
 
-//MAIN APP
 
+
+//MAIN APP
 const App = () => {
   const location = useLocation();
 
@@ -49,6 +61,7 @@ const App = () => {
         <Route path="/" element={<HomePage />}/>
         <Route path="/Login" element={<Login />}/>
         <Route path="/Register" element={<Register />}/>
+        <Route path="/About" element={<AboutPage />}/>
       </Routes>
     </>
   );

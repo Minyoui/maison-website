@@ -145,6 +145,7 @@ $NunitoFont: 'Nunito','sans-serif';
     backdrop-filter: blur(5px);
     display: none;
     border-radius: 10px;
+    animation: fadeIn 0.3s ease;
     @extend %defaultFontStyle;
 
     h1 {
@@ -180,3 +181,17 @@ $NunitoFont: 'Nunito','sans-serif';
     }
 }
 
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
