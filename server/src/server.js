@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 // Routes
-import authRoutes from "../routes/authRoutes";
+import authRoutes from "./routes/authRoutes.js";
 
 // Load .env variables
 dotenv.config();
