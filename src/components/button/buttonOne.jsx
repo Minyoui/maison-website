@@ -6,6 +6,7 @@ function Button ({ children, onClick }) {
         <motion.button
             className='buttonOne'
             whileTap={{scale:0.95}}
+            onClick={onClick}
         >
             {children}
         </motion.button>

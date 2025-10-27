@@ -1,12 +1,15 @@
 import './sub-footer.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
+
 
 //Assets 
 import Image from '../../assets/images/woman-in-spa.png';
 import Wellness from '../../assets/images/wellness-journey.png';
 
 const SubFooter = () => {
+    const navigate = useNavigate();
+
     return (
         <div className='sub-footer'>
             <img src={Wellness} alt="Ready to begin your Wellness Journey?" className="wellness-header" loading='lazy' />

@@ -6,6 +6,7 @@ import './App.css'
 import Navbar from './components/navbar/navbar';
 const Footer = React.lazy(() => import ('./components/footer/footer'))
 const SubFooter = React.lazy(() => import ('./components/footer/sub-footer'))
+import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 
 //Pages-Dashboard
 import Hero from './pages/dashboard/hero-section/hero';

@@ -1,6 +1,7 @@
 import './navbar.scss';
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 //Assets
 import Arrow from '../../assets/icons/arrow-up-right.svg';
@@ -13,6 +14,8 @@ import Menu from '../button/menu';
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const { user, logout } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     //Navbar Scroll Identifier
     useEffect(() => {
@@ -24,6 +27,11 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Navigation
+    const toLogin = () => {
+        navigate("/Login");
+    };
 
     return (
         <div className={`navbar-wrapper ${scrolled? 'scrolled':''}`}>
@@ -38,12 +46,10 @@ const Navbar = () => {
                         <li><a href="#contact">CONTACT US<div className='underline'/></a></li>
                     </div>
                     <li id="register">
-                        <Link to="/Login">
-                            <Button>
-                                Sign-up / Sign-in 
-                                <img src={Arrow} aria-hidden="true" loading='lazy'/>
-                            </Button>
-                        </Link>
+                        <Button onClick={toLogin}>
+                            Sign-up / Sign-in 
+                            <img src={Arrow} aria-hidden="true" loading='lazy'/>
+                        </Button>
                     </li>
 
                     <Menu onToggle={setMenuOpen}/>
@@ -58,12 +64,10 @@ const Navbar = () => {
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                     <div className='account-info'>
-                        <Link to="/Login">
-                            <Button>
-                                Sign-up / Sign In
-                                <img src={Arrow} aria-hidden="true" loading='lazy'/>
-                            </Button>
-                        </Link>
+                        <Button onClick={toLogin}>
+                            Sign-up / Sign In
+                            <img src={Arrow} aria-hidden="true" loading='lazy'/>
+                        </Button>
                     </div>
                 </div>
             </nav>
