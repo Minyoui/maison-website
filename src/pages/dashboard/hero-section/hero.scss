@@ -12,7 +12,7 @@ $darkContainerColor: rgba(36,25,47,0.7);
 
 .hero-section {
     width: 100%;
-    height: 100dvh;
+    min-height: 100dvh;
     background-image: url("/public/maison-d-bg.jpg");
     background-size: cover;
     background-position: center;
@@ -34,7 +34,7 @@ $darkContainerColor: rgba(36,25,47,0.7);
         background-color: $darkContainerColor;
         border-radius: 15px;
         box-shadow: 0 10px 10px rgba(0,0,0,0.5);
-        width: 50%;
+        width: 60%;
         min-width: 500px;
         transition: all 0.3s ease;
 
@@ -62,6 +62,9 @@ $darkContainerColor: rgba(36,25,47,0.7);
             border: none;
             box-shadow: none;
             font-family: 'Pacifico','sans-serif';
+            padding: 0;
+            height: 50px;
+            width: 125px;
             cursor: pointer;
             font-size: 16px;
             border-radius: 10px;
@@ -88,6 +91,22 @@ $darkContainerColor: rgba(36,25,47,0.7);
 
 .hero-section button:hover {
     letter-spacing: 2px;
+}
+
+@media (max-width: 570px) {
+    .hero-section {
+        .welcome-header-container {
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+            width: 95%;
+            min-width: 0px;
+
+            span {
+                text-align: center;
+            }
+        }
+    }
 }
 
 @media (max-width: 500px) {

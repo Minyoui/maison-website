@@ -11,7 +11,7 @@ import ProfileIcon from '../../assets/icons/profile-icon.png';
 // Components
 import Button from '../button/buttonOne';
 import Menu from '../button/menu';
-import Profile from '../button/profile';
+
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -81,14 +81,14 @@ const Navbar = () => {
                     </ul>
                     <div className='account-info'>
                         {user ? (
-                            <Button onClick={toLogin}>
-                                Welcome! {user.firstName}
-                                <img src={Arrow} aria-hidden="true" loading='lazy'/>
+                            <Button onClick={profileModal}>
+                                My Profile
+                                <img src={ProfileIcon} aria-hidden="true" loading='lazy'/>
                             </Button>
                         ) : (
                             <Button onClick={toLogin}>
                                 Sign-up / Sign-in 
-                                <img src={Arrow} aria-hidden="true" loading='lazy'/>
+                                <img src={Arrow} aria-hidden="true" loading='lazy' id="Arrow"/>
                             </Button>
                         )}
                     </div>

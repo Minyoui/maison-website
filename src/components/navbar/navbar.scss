@@ -206,7 +206,7 @@ $darkContainerColor: rgba(36,25,47,0.7);
                 button {
                     color: $defaultFontColor;
                     font-family: 'Nunito','sans-serif';
-                    &:hover img {
+                    &:hover #Arrow{
                         transform: rotate(45deg);
                     }
                 }             
