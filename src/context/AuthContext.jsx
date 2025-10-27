@@ -1,10 +1,12 @@
 import { createContext, useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
+  const navigate = useNavigate();
 
   // When app loads, check localStorage for saved login data
   useEffect(() => {
@@ -29,6 +31,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");
     setUser(null);
     setToken(null);
+    navigate("/Login");
   };
 
   return (

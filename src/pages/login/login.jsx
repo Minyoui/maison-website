@@ -1,5 +1,5 @@
 import './login.scss';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 
@@ -10,6 +10,8 @@ import Button from '../../components/button/buttonOne';
 import MDLogo from '/maison-d-main-logo.svg';
 import Facebook from '../../assets/icons/facebook-logo.svg';
 import Google from '../../assets/icons/google-logo.svg';
+import { AuthContext } from '../../context/AuthContext';
+
 
 const Login = () => {
     const [isTCModalOpen, setTCModalOpen] = useState(false);
@@ -18,6 +20,7 @@ const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const { login } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -42,12 +45,15 @@ const Login = () => {
                 throw new Error(data.message || 'Login Failed'); 
             }
 
-            // Save JWT Token and User Data
+            // Call AuthContext login to update state immediately
+            login(data.user, data.token);
+
+            // Save JWT Token and User Data (You can remove this later because it's optional)
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
 
-            alert('Login Successful!');
             navigate('/'); // redirect to dashboard 
+
         } catch (err) {
             setError(err.message);
         } finally {

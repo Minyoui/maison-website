@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
-//Assets
+// Assets
 import Arrow from '../../assets/icons/arrow-up-right.svg';
 import TextLogo from '/maison-d-text-logo.svg';
 import ProfileIcon from '../../assets/icons/profile-icon.png';
 
-//Components
+// Components
 import Button from '../button/buttonOne';
 import Menu from '../button/menu';
 import Profile from '../button/profile';
@@ -16,14 +16,16 @@ import Profile from '../button/profile';
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const [isProfileOpen, setProfileOpen] = useState(false);
+
     const { user, logout } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    //Navbar Scroll Identifier
+    // Navbar Scroll Identifier
     useEffect(() => {
         const handleScroll = () => {
             const offset = window.scrollY;
-            setScrolled(offset > 80); //Threshold
+            setScrolled(offset > 80); // Threshold
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -33,6 +35,11 @@ const Navbar = () => {
     // Navigation
     const toLogin = () => {
         navigate("/Login");
+    };
+
+    // Profile Modal
+    const profileModal = () => {
+        setProfileOpen(true);
     };
 
     return (
@@ -49,7 +56,7 @@ const Navbar = () => {
                     </div>
                     <li id="register">
                         {user ? (
-                            <Button>
+                            <Button onClick={profileModal}>
                                 My Profile
                                 <img src={ProfileIcon} aria-hidden="true" loading='lazy'/>
                             </Button>
@@ -87,6 +94,14 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+
+            {/* PROFILE MODAL */}
+            <div className={`profile-modal-wrapper ${isProfileOpen? 'opened' : ''}`}>
+                <div className='profile-modal-container'>
+                    <button type="button" onClick={() => setProfileOpen(false)}>Close</button>
+                    <button type="button" onClick={logout}>Logout</button>
+                </div>
+            </div>
         </div>
     );
 };
