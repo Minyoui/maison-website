@@ -1,6 +1,6 @@
 import './login.scss';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 
 //Components 
@@ -14,6 +14,46 @@ import Google from '../../assets/icons/google-logo.svg';
 const Login = () => {
     const [isTCModalOpen, setTCModalOpen] = useState(false);
     const [isPPModalOpen, setPPModalOpen] = useState(false);
+
+    const [formData, setFormData] = useState({ email: '', password: '' });
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        setLoading(true);
+
+        try {
+            const res = await fetch('http://localhost:5000/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.message || 'Login Failed'); 
+            }
+
+            // Save JWT Token and User Data
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('user', JSON.stringify(data.user));
+
+            alert('Login Successful!');
+            navigate('/'); // redirect to dashboard 
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className='login-wrapper'>
@@ -51,25 +91,31 @@ const Login = () => {
             </div>
             <div className='login-container'>
                 <h1>Login</h1>
-                <form className='login-form'>
-                    <label for="email">Email Address</label>
+                <form className='login-form' onSubmit={handleSubmit}>
+                    <label htmlFor="email">Email Address</label>
                     <input 
                         type="email" 
                         name="email" 
                         id="email"
                         placeholder='Enter your email' 
+                        value={formData.email}
+                        onChange={handleChange}
                         required
                     />
-                    <label for="password">Password</label>
-                    <input 
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password" 
                         name="password" 
                         placeholder='Enter password' 
                         id="password"
+                        value={formData.password}
+                        onChange={handleChange}
                         required
                     />
-                    <Button type="submit">Login</Button>
+                    <Button type="submit">{loading ? 'Logging in...' : 'Login'}</Button>
                     <Link to="/"><Button type="button">Go Back</Button></Link>
                 </form>
+                {error && <p className='error-message'>{error}</p>}
                 <p style={{textAlign:"center"}}>Don't have an account? <Link to="/Register">Register Here</Link></p>
                 <div className='login-divider'>
                     <div/>
