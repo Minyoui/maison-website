@@ -1,15 +1,13 @@
 import './profile.scss';
 import { motion } from 'motion/react';
 
-const Profile = () => {
+const Profile = ({ children }) => {
     return (
-        <motion.button 
-            whileTap={{ scale: 0.95 }}
-            className='profile-btn'
-        >
-
-
-        </motion.button>
+        <div className='profile-wrapper'>
+            <div className='profile-container'>
+                <h1>{children}</h1>
+            </div>
+        </div>
     );
 };
 

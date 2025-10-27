@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 function Button ({ children, onClick }) {
     return (
         <motion.button
+            type="button"
             className='buttonOne'
             whileTap={{scale:0.95}}
             onClick={onClick}

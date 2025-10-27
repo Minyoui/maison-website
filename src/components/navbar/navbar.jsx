@@ -6,10 +6,12 @@ import { AuthContext } from '../../context/AuthContext';
 //Assets
 import Arrow from '../../assets/icons/arrow-up-right.svg';
 import TextLogo from '/maison-d-text-logo.svg';
+import ProfileIcon from '../../assets/icons/profile-icon.png';
 
 //Components
 import Button from '../button/buttonOne';
 import Menu from '../button/menu';
+import Profile from '../button/profile';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -46,10 +48,17 @@ const Navbar = () => {
                         <li><a href="#contact">CONTACT US<div className='underline'/></a></li>
                     </div>
                     <li id="register">
-                        <Button onClick={toLogin}>
-                            Sign-up / Sign-in 
-                            <img src={Arrow} aria-hidden="true" loading='lazy'/>
-                        </Button>
+                        {user ? (
+                            <Button>
+                                My Profile
+                                <img src={ProfileIcon} aria-hidden="true" loading='lazy'/>
+                            </Button>
+                        ) : (
+                            <Button onClick={toLogin}>
+                                Sign-up / Sign-in 
+                                <img src={Arrow} aria-hidden="true" loading='lazy' id="Arrow"/>
+                            </Button>
+                        )}
                     </li>
 
                     <Menu onToggle={setMenuOpen}/>
@@ -64,10 +73,17 @@ const Navbar = () => {
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                     <div className='account-info'>
-                        <Button onClick={toLogin}>
-                            Sign-up / Sign In
-                            <img src={Arrow} aria-hidden="true" loading='lazy'/>
-                        </Button>
+                        {user ? (
+                            <Button onClick={toLogin}>
+                                Welcome! {user.firstName}
+                                <img src={Arrow} aria-hidden="true" loading='lazy'/>
+                            </Button>
+                        ) : (
+                            <Button onClick={toLogin}>
+                                Sign-up / Sign-in 
+                                <img src={Arrow} aria-hidden="true" loading='lazy'/>
+                            </Button>
+                        )}
                     </div>
                 </div>
             </nav>
