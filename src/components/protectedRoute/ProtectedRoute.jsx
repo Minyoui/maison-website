@@ -1,8 +1,8 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext'; 
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = () => {
   const { token } = useContext(AuthContext); // ✅ Destructure token
 
   // If no token found, redirect to login
@@ -10,8 +10,8 @@ const ProtectedRoute = ({ children }) => {
     return <Navigate to="/Login" replace />;
   }
 
-  // If token exists, show the protected page
-  return children;
+  // If logged in, show all nested routes 
+  return <Outlet />;
 };
 
 export default ProtectedRoute;

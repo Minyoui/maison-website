@@ -52,6 +52,7 @@ const Register = React.lazy(() => import('./pages/register/register'))
 
 //Pages-Booking
 const Landing = React.lazy(() => import('./pages/booking/landing/landing'))
+const OnsiteForm = React.lazy(() => import('./pages/booking/form/onsite-service/onsite'))
 
 
 //MAIN APP
@@ -65,15 +66,11 @@ const App = () => {
         <Route path="/Register" element={<Register />}/>
         <Route path="/About" element={<AboutPage />}/>
 
-        {/* Protected Routes */}
-        <Route 
-          path="/Booking"
-          element={
-            <ProtectedRoute>
-              <Landing />
-            </ProtectedRoute>
-          }
-        />
+        {/* Protected Group */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="/Booking" element={<Landing />} />
+          <Route path="/Onsite-Form" element={<OnsiteForm />} />
+        </Route>
       </Routes>
     </>
   );

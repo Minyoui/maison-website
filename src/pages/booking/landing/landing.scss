@@ -1,0 +1,78 @@
+$defaultFontColor: #fff;
+$darkHighlightColor: #4A2574;
+$nunito: 'Nunito','sans-serif';
+$pacifico: 'Pacifico','sans-serif';
+
+.landing-wrapper {
+    min-height: 100dvh;
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    h1 {
+        font-family: $nunito;
+        color: $darkHighlightColor;
+    }
+
+    .cancel-btn {
+        width: clamp(500px, 100%, 800px);
+        border-radius: 15px;
+        border: none;
+        background-color: #fff;
+        padding: 20px;
+        font-family: $nunito;
+        font-weight: bold;
+        cursor: pointer;
+
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $darkHighlightColor;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+            color: $defaultFontColor;
+        }
+    }
+}
+
+.service-option {
+    width: clamp(500px, 100%, 800px);
+
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+
+    p,
+    h1 {
+        color: $darkHighlightColor;
+        font-family: $nunito;
+    }
+    button {
+        color: $defaultFontColor;
+        font-family: $nunito;
+        font-weight: bold;
+        padding: 15px 40px;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    }
+}
+
+@media (max-width: 720px) {
+    .service-option,
+    .cancel-btn {
+        width: 100% !important;
+    }
+}
