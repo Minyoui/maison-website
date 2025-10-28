@@ -1,5 +1,5 @@
 import './sub-footer.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 
 
@@ -15,6 +15,7 @@ const SubFooter = () => {
             <img src={Wellness} alt="Ready to begin your Wellness Journey?" className="wellness-header" loading='lazy' />
             <motion.button 
                 type="button"
+                onClick={() => navigate("/Booking")}
                 whileHover={{scale: 1.05, boxShadow: "0 10px 10px rgba(0,0,0,0.3)"}}
                 whileTap={{scale: 0.95, boxShadow: "0 3px 3px rgba(0,0,0,0.3)"}}
             >

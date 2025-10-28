@@ -107,7 +107,7 @@ const Navbar = () => {
                     <button type="button">My Profile</button>
                     <button type="button">My Appointments</button>
                     <button type="button">Notifications</button>
-                    <button type="button" onClick={logout}>Logout Account</button>
+                    <button style={{ borderBottom: "none" }}type="button" onClick={logout}>Logout Account</button>
                 </div>
             </Profile>
         </div>

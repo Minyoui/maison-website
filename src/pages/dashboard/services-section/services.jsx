@@ -1,6 +1,6 @@
 import './services.scss';
-import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 //Components
 import Header from '../../../components/header/header';
@@ -11,6 +11,7 @@ import Couple from '../../../assets/icons/Couple.svg';
 
 const Services = () => {
     const [activeCategory, setActiveCategory] = useState('wellness');
+    const navigate = useNavigate();
 
     const services = {
         wellness: [
@@ -214,11 +215,12 @@ const Services = () => {
                 </span>
                 
                 <div className="service-footer">
-                    <Link to="/Book">
-                    <button className="book-now-button">
+                    <button 
+                        className="book-now-button"
+                        onClick={() => navigate("/Booking")}
+                    >
                         Book Now
                     </button>
-                    </Link>
                 </div>
                 </div>
             ))}
