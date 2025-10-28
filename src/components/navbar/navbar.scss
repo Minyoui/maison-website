@@ -16,6 +16,7 @@ $darkContainerColor: rgba(36,25,47,0.7);
     align-items: center;
     justify-content: center;
     position: fixed;
+    z-index: 999;
 }
 
 .navbar-container {
@@ -28,7 +29,7 @@ $darkContainerColor: rgba(36,25,47,0.7);
     background-color: $darkContainerColor;
     overflow: hidden;
     transition: all 0.5s ease;
-    z-index: 999;
+    z-index: 998;
 }
 
 .navigation-links,
@@ -96,7 +97,7 @@ $darkContainerColor: rgba(36,25,47,0.7);
 
 /* SCROLLED NAVBAR */
 .navbar-wrapper.scrolled {
-    z-index: 9999;
+    z-index: 998;
     padding: 0px;
     .navbar-container{
         backdrop-filter: blur(5px);
@@ -109,29 +110,70 @@ $darkContainerColor: rgba(36,25,47,0.7);
     }
 }
 
+
 /* PROFILE MODAL */
-.profile-modal-wrapper{
-    display: none;
 
-    min-height: 100dvh;
+.profile-modal-header {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding-top: 30px;
 
-    &.opened {
-        position: absolute;
-        top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(0,0,0,0.5);
-        backdrop-filter: blur(3px);
+    p {
+        font-family: 'Nunito','sans-serif';
+        font-size: 14px;
+        color: #808080;
+    }
 
-        .profile-modal-container {
-            background-color: #fff;
-            padding: 20px;
+    h1 {
+        font-family: 'Nunito','sans-serif';
+        color: $darkHighlightColor;
+        position: relative;
+
+        span {
+            position: absolute;
+            font-size: 12px;
+            font-family: 'Nunito','sans-serif';
+            left: -10px;
+            top: 0;
         }
+    }
+
+    .membership-tier {
+        border-radius: 100px;
+        background-color: #F2E5FF;
+        color: $darkHighlightColor !important;
+        padding: 5px 20px;
+        transition: all 0.3s ease;
+        font-size: 12px;
+        font-family: 'Pacifico','sans-serif';
     }
 }
 
+.profile-modal-btns {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        padding: 20px;
+        font-family: 'Nunito','sans-serif';
+        color: #F2E5FF;
+        background-color: $darkHighlightColor;
+        border: none;
+        border-bottom: 1px solid #F2E5FF;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #F2E5FF;
+            color:$darkHighlightColor;
+            font-weight: bold;
+            box-shadow: inset 0 1px 5px rgba(0,0,0,0.8);
+        }
+    }
+}
 
 
 /* MOBILE */

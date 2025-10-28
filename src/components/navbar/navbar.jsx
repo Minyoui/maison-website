@@ -11,7 +11,7 @@ import ProfileIcon from '../../assets/icons/profile-icon.png';
 // Components
 import Button from '../button/buttonOne';
 import Menu from '../button/menu';
-
+import Profile from '../modals/profile';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -37,10 +37,7 @@ const Navbar = () => {
         navigate("/Login");
     };
 
-    // Profile Modal
-    const profileModal = () => {
-        setProfileOpen(true);
-    };
+
 
     return (
         <div className={`navbar-wrapper ${scrolled? 'scrolled':''}`}>
@@ -56,7 +53,7 @@ const Navbar = () => {
                     </div>
                     <li id="register">
                         {user ? (
-                            <Button onClick={profileModal}>
+                            <Button onClick={() => setProfileOpen(true)}>
                                 My Profile
                                 <img src={ProfileIcon} aria-hidden="true" loading='lazy'/>
                             </Button>
@@ -81,7 +78,7 @@ const Navbar = () => {
                     </ul>
                     <div className='account-info'>
                         {user ? (
-                            <Button onClick={profileModal}>
+                            <Button onClick={() => setProfileOpen(true)}>
                                 My Profile
                                 <img src={ProfileIcon} aria-hidden="true" loading='lazy'/>
                             </Button>
@@ -96,12 +93,23 @@ const Navbar = () => {
             </nav>
 
             {/* PROFILE MODAL */}
-            <div className={`profile-modal-wrapper ${isProfileOpen? 'opened' : ''}`}>
-                <div className='profile-modal-container'>
-                    <button type="button" onClick={() => setProfileOpen(false)}>Close</button>
-                    <button type="button" onClick={logout}>Logout</button>
+            <Profile isOpen={isProfileOpen} onClose={() => setProfileOpen(false)}>
+                {user ? (
+                    <div className='profile-modal-header'>
+                        <h1><span>Hi</span>{user.firstName}</h1>
+                        <p>{user.email}</p>
+                        <p className='membership-tier'>Basic Member</p>
+                    </div>
+                    ) : (
+                    <p>Loading...</p>
+                )}
+                <div className='profile-modal-btns'>
+                    <button type="button">My Profile</button>
+                    <button type="button">My Appointments</button>
+                    <button type="button">Notifications</button>
+                    <button type="button" onClick={logout}>Logout Account</button>
                 </div>
-            </div>
+            </Profile>
         </div>
     );
 };
