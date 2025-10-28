@@ -52,7 +52,7 @@ const Login = () => {
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
 
-            navigate('/'); // redirect to dashboard 
+            setTimeout(() => navigate('/'), 1500); // Redirect to dashboard
 
         } catch (err) {
             setError(err.message);

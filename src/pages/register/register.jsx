@@ -1,7 +1,8 @@
 import './register.scss';
 import { motion } from 'motion/react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 //Components 
 import Button from '../../components/button/buttonOne';
@@ -13,6 +14,7 @@ import { form } from 'motion/react-client';
 const Register = () => {
     const [isTCModalOpen, setTCModalOpen] = useState(false);
     const [isPPModalOpen, setPPModalOpen] = useState(false);
+    const { login } = useContext(AuthContext);
     const navigate = useNavigate();
 
     // Form data states
@@ -64,7 +66,7 @@ const Register = () => {
 
             if (response.ok) {
                 setSuccess(data.message || 'Registration successful!');
-                setTimeout(() => navigate('/login'), 1500); // Redirect to login
+                setTimeout(() => navigate('/Login'), 1500); // Redirect to dashboard
             } else {
                 setError(data.message || 'Registration failed.');
             }

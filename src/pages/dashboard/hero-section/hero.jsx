@@ -1,6 +1,7 @@
 import './hero.scss';
 import { AuthContext } from '../../../context/AuthContext';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //Assets
 import MDLogo from '/maison-d-main-logo.svg';
@@ -11,7 +12,12 @@ import Button from '../../../components/button/buttonOne';
 import TextType from '../../../components/react-bits/text-type/TextType';
 
 const Hero = () => {
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
+
+    const toBook = () => {
+        navigate("/Booking");
+    };
 
     return (
         <header className='hero-section' id="home" role='banner'>
@@ -20,7 +26,7 @@ const Hero = () => {
                 <div className='welcome-header-container'>
                     <div>
                         <TextType 
-                                    text={[`Welcome ${user.firstName}! You are one step away to relaxation ❤️`]}
+                                    text={[`Welcome ${user.firstName}! You are one step away to relaxation ❤️`,`If you want to start your appointment, click ➞`]}
                                     typingSpeed={75}
                                     pauseDuration={1500}
                                     showCursor={true}
@@ -29,10 +35,11 @@ const Hero = () => {
                     </div>
                     <button
                         type="button"
+                        onClick={toBook}
                     >Book Now</button>
                 </div>
             ) : (
-                <Button>Book Now</Button>
+                <Button onClick={toBook}>Book Now</Button>
             )}
         </header>
     );

@@ -9,15 +9,26 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   // When app loads, check localStorage for saved login data
-  useEffect(() => {
+ useEffect(() => {
+  try {
     const storedUser = localStorage.getItem("user");
     const storedToken = localStorage.getItem("token");
 
-    if (storedUser && storedToken) {
+    if (storedUser && storedUser !== "undefined" && storedToken) {
       setUser(JSON.parse(storedUser));
       setToken(storedToken);
+    } else {
+      // Clean up corrupted storage
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
     }
-  }, []);
+  } catch (error) {
+    console.error("Failed to parse user from localStorage:", error);
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+  }
+}, []);
+
 
   const login = (userData, userToken) => {
     localStorage.setItem("user", JSON.stringify(userData));

@@ -1,7 +1,9 @@
 import { Navigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext'; 
 
 const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem('token');
+  const { token } = useContext(AuthContext); // ✅ Destructure token
 
   // If no token found, redirect to login
   if (!token) {

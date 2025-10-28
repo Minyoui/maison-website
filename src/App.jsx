@@ -1,5 +1,5 @@
-import React, { useState, useEffect, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 //Components
@@ -16,6 +16,7 @@ const Services = React.lazy(() => import ('./pages/dashboard/services-section/se
 const Gallery = React.lazy(() => import ('./pages/dashboard/gallery-section/gallery'))
 const Review = React.lazy(() => import ('./pages/dashboard/review-section/review'))
 const Contact = React.lazy(() => import ('./pages/dashboard/contact-section/contact'))
+
 
 const HomePage = () => (
   <>
@@ -49,12 +50,12 @@ const Login = React.lazy(() => import ('./pages/login/login'))
 //Pages-Register
 const Register = React.lazy(() => import('./pages/register/register'))
 
-
+//Pages-Booking
+const Landing = React.lazy(() => import('./pages/booking/landing/landing'))
 
 
 //MAIN APP
 const App = () => {
-  const location = useLocation();
 
   return (
     <>
@@ -63,6 +64,16 @@ const App = () => {
         <Route path="/Login" element={<Login />}/>
         <Route path="/Register" element={<Register />}/>
         <Route path="/About" element={<AboutPage />}/>
+
+        {/* Protected Routes */}
+        <Route 
+          path="/Booking"
+          element={
+            <ProtectedRoute>
+              <Landing />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );
