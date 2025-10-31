@@ -94,57 +94,6 @@ router.get("/profile", verifyToken, async (req, res) => {
 });
 
 
-// Therapists
-router.get("/therapists", async (req,res) => {
-    try {
-        const therapists = await Therapists.find();
-        res.status(200).json(therapists);
-    } catch (error) {
-        res.status(500).json({ message: "Failed to fetch therapist."});
-    }
-});
 
-
-// Appointments
-router.get("/appointments", async (req, res) => {
-    try {
-        const appointments = await Appointment.find()
-            .populate("userId", "firstName lastName")
-            .populate("therapistId", "name");
-        res.status(200).json(appointments);
-    } catch (error) {
-        res.status(500).json({ message: "Failed to fetch appointments"});
-    }
-});
-
-
-// Create new booking when the user submits a form (Onsite Service)
-router.post("/appointments", async (req, res) => {
-    try {
-        const { userId, therapistId, date, time, service, addOns, notes } = req.body;
-
-        // Optional: check for duplicate slot
-        const existing = await Appointment.findOne({ therapistId, date, time });
-        if (existing) {
-            return res.status(400).json({ message: "Time slot already booked." });
-        }
-
-        const newAppointment = new Appointment({
-            userId,
-            therapistId,
-            date,
-            time,
-            service,
-            addOns,
-            notes,
-        });
-
-        await newAppointment.save();
-        res.status(201).json({ message: "Appointment created successfully!" });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Server Error" });
-    }
-});
 
 export default router;
