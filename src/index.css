@@ -42,6 +42,15 @@
   font-display: swap;
 }
 
+/* CARATTERE REGULAR FONT */
+@font-face {
+  font-family: 'Carattere';
+  src: url('./assets/fonts/Carattere-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-style: swap;
+}
+
 * {
   margin: 0;
   padding: 0;

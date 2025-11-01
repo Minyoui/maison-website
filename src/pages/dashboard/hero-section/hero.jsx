@@ -8,8 +8,7 @@ import MDLogo from '/maison-d-main-logo.svg';
 import ProfileIcon from '../../../assets/icons/profile-icon.png';
 
 //Components
-import Button from '../../../components/button/buttonOne';
-import TextType from '../../../components/react-bits/text-type/TextType';
+import Button from '../../../components/button/buttonTwo';
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -21,28 +20,15 @@ const Hero = () => {
 
     return (
         <header className='hero-section' id="home" role='banner'>
-            <img src={MDLogo} alt="Maison`D Business Logo" fetchPriority='high'/>
-            {user ? (
-                <div className='welcome-header-container'>
-                    <div>
-                        <TextType 
-                                    text={[`Welcome ${user.firstName}! You are one step away to relaxation ❤️`,`If you want to start your appointment, click ➞`]}
-                                    typingSpeed={75}
-                                    pauseDuration={1500}
-                                    showCursor={true}
-                                    cursorCharacter=""
-                                />
-                    </div>
-                    <button
-                        type="button"
-                        onClick={toBook}
-                    >Book Now</button>
-                </div>
-            ) : (
-                <Button onClick={toBook}>Book Now</Button>
-            )}
+            <div className='hero-container'>
+                <h1>Experience Calm Curated with <span>Luxurious</span> Care</h1>
+                <p>Maison`D is a sanctuary of relaxation, offering authentic balinese spa treatments designed to heal and rejuvenate</p>
+                <Button>
+                    Make an appointment
+                </Button>
+            </div>
         </header>
     );
 };
 
-export default Hero;
+export default Hero;      

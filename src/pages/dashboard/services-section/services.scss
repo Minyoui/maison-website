@@ -1,9 +1,18 @@
-/* Spa Menu CSS Styles */
+$background: #201728;
+$primary: #352742;
+$secondary: #4A2574;
+$tertiary: #C9BADA;
+$regular: #fff;
+$highlight: #FBBC05;
+
+$nunito: 'Nunito','sans-serif';
+$carattere: 'Carattere','sans-serif';
+$antic: 'Antic Didone','sans-serif';
 
 /* Main Container */
 .spa-menu {
   font-family: 'Nunito', sans-serif;
-  background-color: #D3C0E6;
+  background-color: $primary;
   min-height: 100vh;
   padding: 40px 20px;
 

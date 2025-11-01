@@ -59,7 +59,7 @@ const Navbar = () => {
                             </Button>
                         ) : (
                             <Button onClick={toLogin}>
-                                Sign-up / Sign-in 
+                                Book Now
                                 <img src={Arrow} aria-hidden="true" loading='lazy' id="Arrow"/>
                             </Button>
                         )}
@@ -84,7 +84,7 @@ const Navbar = () => {
                             </Button>
                         ) : (
                             <Button onClick={toLogin}>
-                                Sign-up / Sign-in 
+                                Book Now
                                 <img src={Arrow} aria-hidden="true" loading='lazy' id="Arrow"/>
                             </Button>
                         )}
