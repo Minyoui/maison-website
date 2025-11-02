@@ -3,25 +3,43 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 
 
-//Assets 
-import Image from '../../assets/images/woman-in-spa.png';
-import Wellness from '../../assets/images/wellness-journey.png';
-
 const SubFooter = () => {
     const navigate = useNavigate();
 
     return (
         <div className='sub-footer'>
-            <img src={Wellness} alt="Ready to begin your Wellness Journey?" className="wellness-header" loading='lazy' />
-            <motion.button 
-                type="button"
-                onClick={() => navigate("/Booking")}
-                whileHover={{scale: 1.05, boxShadow: "0 10px 10px rgba(0,0,0,0.3)"}}
-                whileTap={{scale: 0.95, boxShadow: "0 3px 3px rgba(0,0,0,0.3)"}}
+            <motion.div 
+                className='sub-footer-container'
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                viewport={{ once: true }}
             >
-                Book Now
-            </motion.button>
-            <motion.img whileHover={{scale: 1.1}} src={Image} className='woman-in-spa' alt="Vector Image of a Woman in Spa" loading='lazy' />
+                <p className='header'>Reservation</p>
+                <div className='content'>
+                    <h1>
+                        Book Your Luxury Balinese Massage Now
+                    </h1>
+                    <p>Escape, Relax, Rejuvenate, Anytime, Anywhere</p>
+                    <div className='lower-content'>
+                        <p className='title'>Easy Booking in Just Seconds</p>
+                        <div className='information'>
+                            <div className='tag'>
+                                <span>Call Us</span>
+                                <p>(+63)926 098 4659</p>
+                            </div>
+
+                            <div className='tag'>
+                                <span></span>
+                            </div>
+
+                            <div className='tag'>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
         </div>
     );
 };

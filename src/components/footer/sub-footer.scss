@@ -1,51 +1,94 @@
-$borderColor: rgba(255,255,255);
-$colorOne: #9E72C3;
-$colorTwo: #E87DC8;
-$colorThree: #d6a9f3;
-$nunitoFont: 'Nunito','sans-serif';
+$background: #201728;
+$primary: #352742;
+$secondary: #4A2574;
+$tertiary: #B08CCE;
+$light: #E3DBEC;
+$regular: #fff;
+$highlight: #FBBC05;
+
+$nunito: 'Nunito','sans-serif';
+$carattere: 'Carattere','sans-serif';
+$antic: 'Antic Didone','sans-serif';
 
 .sub-footer {
-    position: relative;
+    background-image: url("./maison-d-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 100%;
+    min-height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-footer-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 80%;
+
+    border-radius: 20px;
+    background: rgba(32,23,40, 0.6);
+    backdrop-filter: blur(5px);
+
+    .header {
+        background-color: $tertiary;
+        text-align: center;
+        padding: 10px;
+        color: $secondary;
+        font-family: $nunito;
+    }
+}
+
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 50px;
+    padding: 100px;
 
-    padding: 80px 20px;
-
-    button {
-        color: #fff;
-        font-size: 24px;
-        font-family: 'Pacifico','sans-serif';
-        border: 5px solid $borderColor;
-        border-radius: 100px;
-        padding: 8px 40px;
-        background: linear-gradient(
-            $colorOne,
-            $colorTwo
-        );
-        cursor: pointer;
-    }
-}
-
-.wellness-header {
+    h1 {
+        color: $regular;
+        font-family: $antic;
+        font-weight: normal;
+        font-size: 3rem;
+        text-align: center;
         width: 600px;
-}
-
-.woman-in-spa {
-    position: absolute;
-    top: -125px;
-    width: 250px;
-}
-
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 748px) {
-    .wellness-header {
-        width: 100%;
     }
 
-    .woman-in-spa {
-        width: 225px;
+    p {
+        color: $light;
+        font-family: $nunito;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+.lower-content {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+
+    .title {
+        background-color: $secondary;
+        text-align: center;
+        padding: 10px;
+
+    }
+
+    .information {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .tag {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
     }
 }

@@ -1,6 +1,7 @@
 import './services.scss';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
 //Components
 import Header from '../../../components/header/header';
@@ -178,12 +179,25 @@ const Services = () => {
             {/* Services Grid */}
             <div className="services-grid">
             {services[activeCategory].map((service, index) => (
-                <div key={index} className="service-card">
+                <motion.div 
+                    key={index} 
+                    className="service-card"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    whileHover={{ scale: 1.05}}
+                >
                 <div className="service-header">
                     <h1 className="service-name">{service.name}</h1>
-                    <span className="service-price">
+                    <motion.span 
+                        className="service-price"
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                        viewport={{ once: true }}
+                    >
                         {service.price}
-                    </span>
+                    </motion.span>
                 </div>
                 
                 <span>
@@ -222,19 +236,10 @@ const Services = () => {
                         Book Now
                     </button>
                 </div>
-                </div>
+                </motion.div>
             ))}
             </div>
-
-            {/* Footer Note */}
-            <div className="spa-footer">
-            <p className="footer-quote">
-                "Wellness is not a destination, it's a way of life"
-            </p>
-            <p className="footer-note">
-                All appointments include complimentary access to our relaxation lounge and refreshments
-            </p>
-            </div>
+            
         </div>
         </main>
     );

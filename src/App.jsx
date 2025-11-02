@@ -24,6 +24,10 @@ const HomePage = () => (
     <Suspense fallback={<div>Loading...</div>}/>
     <About />
     <Services />
+    <Gallery />
+    <Review />
+    <Contact />
+    <SubFooter />
   </>
 );
 

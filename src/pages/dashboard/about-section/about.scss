@@ -1,7 +1,7 @@
 $background: #201728;
 $primary: #352742;
 $secondary: #4A2574;
-$tertiary: #C9BADA;
+$tertiary: #B08CCE;
 $regular: #fff;
 $highlight: #FBBC05;
 
@@ -12,10 +12,49 @@ $antic: 'Antic Didone','sans-serif';
 .about-section {
     min-height: 100dvh;
     width: 100%;
-    padding: 100px 0;
 
     display: flex;
     flex-direction: row;
-    align-items: center;
+}
+
+.about-left-content {
+    width: 100%;
+    max-width: 750px;
+    background-image: url("../../../assets/images/MD-About-Image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100dvh;
     
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-right-content {
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 80px;
+    padding: 0 50px;
+
+    h1 {
+        font-family: $antic;
+        color: $regular;
+        font-weight: normal;
+        font-size: 3rem;
+
+        span {
+            color: $tertiary;
+        }
+    }
+
+    p {
+        font-family: $nunito;
+        color: $regular;
+    }
 }

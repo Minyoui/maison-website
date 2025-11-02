@@ -43,7 +43,7 @@ const Review = () => {
         <main className="reviews-section" id="reviews">
             {/* Header */}
             <Header 
-                title="What Our Client's Say"
+                title="Testimonials"
                 subtitle="Wonderful feedbacks from our loyal customers"
             />
             <div className="reviews-container">
